@@ -1,0 +1,358 @@
+:root{
+
+    /* Font Variables  */
+
+    --main_font:2.7rem;
+    --sub_font:1.7rem;
+    --info_font:1.2rem;
+
+    /* Color Variables  */
+
+    --main_color:#ff0000;
+    --sub_color:#0000ff;
+    --info_color:#ffffff;
+    --soft_color:#c8c8c8;
+
+    /* Bgcolor Variables  */
+
+    --dark_bg:#000000;
+    --blue_bg:#00aaff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Utility Styles  */
+
+.hidden{
+    display: none !important;
+}
+
+.flex{
+    display: flex !important;
+}
+
+.col{
+    flex-direction: column !important;
+}
+
+.wrap{
+    flex-wrap: wrap !important;
+}
+
+.fly_hover{
+    transition: all linear 0.25s;
+}
+
+.fly_hover:hover{
+    transform: translateY(-15px);
+}
+
+.main_font{
+    font-size: var(--main_font);
+    color: var(--main_color);
+    font-weight: 900;
+}
+
+.sub_font{
+    font-size: var(--sub_font);
+    color: var(--sub_color);
+    font-weight: 700;
+}
+
+.info_font{
+    font-size: var(--info_font);
+    color: var(--info_color);
+    font-weight: 600;
+}
+
+/* Header Styles  */
+
+.nav_header{
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    height: 60px;
+    background-color: var(--dark_bg);
+    color: var(--light_color);
+}
+
+.nav_header.scrolled{
+    background-color: var(--soft_color);
+}
+
+.nav_header.scrolled .nav_list{
+    background-color: var(--soft_color);
+}
+
+.nav_header.scrolled .nav_links{
+    color: var(--dark_bg);
+}
+
+.nav_header.scrolled .hamburger{
+    color: var(--dark_bg);
+}
+
+.nav_bar{
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 1%;
+}
+
+.nav_list{
+    list-style: none;
+    justify-content: space-evenly;
+    min-width: 30%;
+    width: auto;
+    gap: 15px;
+    background-color: var(--dark_bg);
+
+}
+
+.nav_links{
+    position: relative;
+    color: var(--soft_color);
+    text-decoration: none;
+}
+
+.nav_links::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 0%;
+    height: 0.5px;
+    background-color: var(--main_color);
+    transition: width 0.35s ease-in;
+}
+
+.nav_list_item:hover .nav_links::after{
+    width: 100%;
+}
+
+/* Main Styles  */
+
+.main_section{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    padding: 90px 1% 0 1%;
+}
+
+.section_div{
+    gap: 35px;
+}
+
+.info_div{
+    align-items: center;
+}
+
+.hero_div{
+    height: calc(100vh - 60px);
+    width: 100%;
+    background-image: url("/images/Shop_Pic.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60% 100%;
+    filter: brightness(70%);
+    background-color: var(--dark_bg);
+}
+
+.doctor_info{
+    height: auto;
+    width: 100%;
+}
+
+.dr_photo{
+    height: 600px;
+    width: 50%;
+}
+
+.dr_photo img{
+    height: 100%;
+    width: 60%;
+    object-position: center;
+    border-radius: 25px;
+    box-shadow: 3px 5px 7px ;
+}
+
+.dr_speech{
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.Certificates_div{
+    gap: 25px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Certificate{
+    max-width: 500px;
+    min-width: 300px;
+}
+
+.Certificate img{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    object-position: bottom;
+    border-radius: 25px;
+    box-shadow: 3px 5px 7px;
+}
+
+.Services_div{
+    height: 100%;
+    width: 100%;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Service{
+    height: 400px;
+    width: 400px;
+    background-color: var(--blue_bg);
+    border-radius: 25px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.Service h3{
+    font-size: var(--main_font) !important;
+    font-weight: 700;
+}
+
+.Conatct_form{
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding:5%;
+    font-size: var(--sub_font);
+    font-weight: 700;
+    gap: 25px
+}
+
+.form_input{
+    max-width: 100%;
+    min-width: 60%;
+    height: 100px;
+    font-weight: 700;
+    border-radius: 25px;
+    border: 3px solid var(--dark_bg);
+    text-align: center;
+    font-size: var(--sub_font);
+}
+
+.Conatct_form textarea{
+    height: 500px;
+    width: 500px;
+    text-align: left;
+    pad: 3%;
+}
+
+.Conatct_form button{
+    background-color: var(--blue_bg);
+    height: 100px;
+    width: 300px;
+    margin-top: 10px;
+    font-size: var(--main_font);
+}
+
+.main_footer{
+    height: 20vh;
+    width: 100%;
+    background-color: var(--dark_bg);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.copy{
+    font-size: var(--sub_font);
+    color: var(--info_color);
+}
+
+@media (max-width:800px) {
+
+    :root{
+        --main_font:2.3rem;
+        --sub_font:1.3rem;
+        --info_font:1.1rem;
+    }
+
+    .hamburger{
+        display: inline !important;
+        color: var(--info_color);
+        font-size: var(--main_font);
+        z-index: 9;
+    }
+
+    .nav_list{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;    
+        transition: all 1s ease-in;
+    }
+
+    .nav_list_item{
+        font-size: var(--main_font);
+        border: 2px solid var(--soft_color);
+        width: 80%;
+        text-align: center;
+        padding: 1%;
+        border-radius: 25px;
+    }
+
+    .nav_header.scrolled .nav_list_item{
+        border-color: var(--dark_bg);
+    }
+
+    .nav_links{
+        font-size: var(--main_font);
+    }
+
+    .nav_list.shown{
+        left: 0;
+    }
+
+    .hero_div{
+        background-size: 100% 100%;
+    }
+
+    .doctor_info{
+        flex-direction: column !important;
+    }
+
+    .dr_photo{
+        width: 100%;
+        background-size:50% 90%;
+    }
+
+    .dr_speech{
+        width: 100%;
+    }
+
+}
